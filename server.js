@@ -38,10 +38,28 @@ const Cheese = mongoose.model("Cheese", cheeseSchema)
 /***************************** */
 // MIDDLEWARE
 /***************************** */
+app.use(cors())
+app.use(morgan("dev"))
+app.use(express.json())
 
 /***************************** */
 // ROUTES
 /***************************** */
+app.get("/", (req, res) => {
+    res.send("<h1>Server working</h1>")
+})
+
+// CHEESE INDEX ROUTE
+
+
+// CHEESE CREATE ROUTE
+
+// CHEESE UPDATE ROUTE
+
+// CHEESE DELETE ROUTE
+
+// CHEESE SHOW ROUTE
+
 
 /***************************** */
 // SERVER LISTENER
