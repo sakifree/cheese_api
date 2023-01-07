@@ -50,9 +50,22 @@ app.get("/", (req, res) => {
 })
 
 // CHEESE INDEX ROUTE
-
+app.get("/cheese", async (req, res) => {
+    try {
+        res.json(await Cheese.find({}))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
 
 // CHEESE CREATE ROUTE
+app.post("/cheese", async (req, res) => {
+    try {
+        res.json(await Cheese.create(req.body))
+    } catch (error) {
+        res.status(400).json(error)
+    }
+})
 
 // CHEESE UPDATE ROUTE
 
